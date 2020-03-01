@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SysInfo</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>SysInfo</h1>
+            <div id="output"></div>
+        </div>
+    </body>
+    <script>
+        console.log(process);
+        let output = `
+        <h2>App Version</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Node: ${process.versions.node}</li>
+            <li class="list-group-item">Chrome: ${process.versions.chrome}</li>
+            <li class="list-group-item">Electron: ${process.versions.electron}</li>
+        </ul>
+        <h2>Specs</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Architecture: ${process.arch}</li>
+            <li class="list-group-item">PC Id: ${process.env.PROCESSOR_IDENTIFIER}</li>
+            <li class="list-group-item">Printer: ${process.env.PRINTER}</li>
+        </ul>
+        <h2>Memory</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Total: ${process.getSystemMemoryInfo().tool}</li>
+            <li class="list-group-item">Free: ${process.getSystemMemoryInfo().free}</li>
+            <li class="list-group-item">Swap Total: ${process.getSystemMemoryInfo().swapTotal}</li>
+            <li class="list-group-item">Swap Free: ${process.getSystemMemoryInfo().swapFree}</li>
+        </ul>
+        <h2>PC Info</h2>
+        <ul class="list-group">
+            <li class="list-group-item">PC Name: ${process.env.USER}</li>
+            <li class="list-group-item">User: ${process.env.USERNAE}</li>
+            <li class="list-group-item">Drive: ${process.env.SYSTEMDRIVE}</li>
+            <li class="list-group-item">Root: ${process.env.SYSTEMROOT}</li>
+        </ul>`;
+        document.getElementById('output').innerHTML = output;
+    </script>
+</html>
