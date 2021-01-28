@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/MisterUniverse/ElectronSysInfo#readme",
   "dependencies": {
-    "electron": "^8.0.2"
+    "electron": "^9.4.0"
   }
 }
